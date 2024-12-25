@@ -118,7 +118,7 @@ User Home Page:
 ![Home Page](/public/img/home.png)  
 ![Cart Page](/public/img/cart.png)  
 ![Contact Page](/public/img/contact.png)  
-![Sign in Page](/public/img/signin.png)  
+![Sign in Page](/public/img/usersignin.png)  
 
 
 Admin Dashboard:
