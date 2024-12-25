@@ -115,16 +115,16 @@ Screenshots
 
 User Home Page: 
 
-![Home Page](/public/imag/home.png)  
-![Cart Page](/public/imag/cart.png)  
-![Contact Page](/public/imag/contact.png)  
-![Sign in Page](/public/imag/signin.png)  
+![Home Page](/public/img/home.png)  
+![Cart Page](/public/img/cart.png)  
+![Contact Page](/public/img/contact.png)  
+![Sign in Page](/public/img/signin.png)  
 
 
 Admin Dashboard:
 
-![Home Page](/public/imag/adminhome.png)  
-![Order Page](/public/imag/adminbooking.png)  
-![Contact Page](/public/imag/admincontact.png)  
-![Sign in Page](/public/imag/adminsignin.png)  
-![AddNew Item Page](/public/imag/addnew.png)  
+![Home Page](/public/img/adminhome.png)  
+![Order Page](/public/img/adminbooking.png)  
+![Contact Page](/public/img/admincontact.png)  
+![Sign in Page](/public/img/adminsignin.png)  
+![AddNew Item Page](/public/img/addnew.png)  
