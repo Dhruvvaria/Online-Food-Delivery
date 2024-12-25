@@ -1,0 +1,83 @@
+<% layout("./layouts/boilerplate") %>
+
+<h1>Confirm your booking</h1>
+<div class="form-container mb-3">
+  <div class="">
+    <div class="mb-3 row">
+      <img src="<%= hotel.image %>" alt="" class="col-6 offset-3" />
+    </div>
+    <div class="mb-3 card card-body">
+      <label for="res-name" class="form-label"><b>Restaurent Name :</b></label>
+      <div class="card-title"><%= hotel.name %></div>
+      <div class="card-title"><%= hotel.address %></div>
+    </div>
+    <div class="mb-3 card card-body">
+      <label for="res-time" class="form-label"
+        ><b>Restaurent Open time :</b></label
+      >
+      <div class="card-title" style="color: green"><%= hotel.time %></div>
+    </div>
+    <div class="mb-3 card card-body">
+      <label for="res-price" class="form-label"
+        ><b>Restaurent Price :</b></label
+      >
+      <div class="card-title">$<%= hotel.price %></div>
+    </div>
+  </div>
+
+  <h2 class="mb-3 mt-3">Enter Your Details :</h2>
+
+  <form action="/restaurents" method="POST" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name : </label>
+      <input
+        type="text"
+        name="res[name]"
+        class="form-control"
+        placeholder="Enter Your Full name"
+        required />
+    </div>
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile No :</label>
+      <input
+        type="number"
+        name="res[mobile]"
+        class="form-control"
+        placeholder="Enter your mobile number"
+        required />
+    </div>
+    <div class="mb-3">
+      <label for="select-time" class="form-label"
+        >Select Time : ( Please select between opening time )</label
+      >
+      <input type="time" class="form-control" name="res[time]" required />
+    </div>
+    <div class="mb-3">
+      <label for="select-members" class="form-label">Select Members :</label>
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            type="number"
+            class="form-control"
+            name="res[adult]"
+            placeholder="Enter number of adults"
+            required />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="number"
+            name="res[child]"
+            class="form-control col-5"
+            placeholder="Enter number of child"
+            required />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="select-date" class="form-label">Total Price :</label>
+      <p class="card-text">$0</p>
+    </div>
+
+    <button class="btn btn-dark">Book Now</button>
+  </form>
+</div>

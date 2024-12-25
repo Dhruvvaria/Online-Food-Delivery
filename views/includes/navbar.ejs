@@ -1,0 +1,93 @@
+<nav class="navbar sticky-top navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="img/d_icon.png" alt="" /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav">
+        <% if (!admin && !crrUser) {%>
+        <a class="nav-link" aria-current="page" href="/home">Home</a>
+
+        <a class="nav-link" href="/restaurents">Restaurants</a>
+
+        <a class="nav-link" href="/about">About</a>
+
+        <a class="nav-link" href="/contact">Contact</a>
+        <% } %> <% if (admin) {%>
+        <a class="nav-link" aria-current="page" href="/admin_home">Home</a>
+
+        <a class="nav-link" href="/admin_home/restaurents_booking"
+          >Restaurants</a
+        >
+
+        <a class="nav-link" href="/admin_home/orders">Orders</a>
+
+        <a class="nav-link" href="/admin_home/contact">Contact</a>
+        <% } %> <% if (crrUser) {%>
+        <a class="nav-link" aria-current="page" href="/home">Home</a>
+
+        <a class="nav-link" href="/restaurents">Restaurants</a>
+
+        <a class="nav-link" href="/about">About</a>
+
+        <a class="nav-link" href="/contact">Contact</a>
+        <% } %>
+      </div>
+      <div class="nav-search ms-auto">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2 search-pannel"
+            type="search"
+            placeholder="Search food.."
+            aria-label="Search" />
+          <button class="btn btn-dark btn-search" type="submit">
+            <i class="ri-search-2-line"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <% if (!admin ) {%>
+
+        <a class="nav-link btn" href="/cart">
+          <i class="ri-shopping-basket-line cart-icon"></i>
+
+          <span class="cart-count"><%= cartCount %></span>
+        </a>
+        <% } %> <% if (!crrUser && !admin ) {%>
+        <a href="/signin" class="nav-link">
+          <i class="ri-login-box-line"></i> Signin</a
+        >
+        <a href="/signup" class="nav-link">
+          <i class="ri-user-add-line"></i> Signup</a
+        >
+        <% } %> <% if (crrUser) {%>
+        <a class="user-info nav-link">
+          <i class="ri-user-3-line"></i> <%= crrUser.username %>
+        </a>
+        <a href="/logout" class="nav-link"
+          >Logout <i class="ri-logout-box-r-line"></i
+        ></a>
+        <% } %> <% if (admin) {%>
+        <a class="user-info nav-link"
+          ><i class="ri-user-3-line"></i>Admin [ <%= admin.username %> ]
+        </a>
+        <a href="/home/newfood" class="nav-link"
+          ><i class="ri-add-circle-line"></i> Add new Dish
+        </a>
+        <a href="/logout" class="nav-link"
+          >Logout <i class="ri-logout-box-r-line"></i
+        ></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

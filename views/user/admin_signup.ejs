@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="signin">
+  <h1>Admin Sign-up</h1>
+  <div class="form-container mb-3">
+    <form
+      action="/admin_signup"
+      method="post"
+      class="needs-validation"
+      novalidate>
+      <label for="username" class="form-label"> Admin Username :</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        placeholder="Enter Admin username.."
+        name="username"
+        required />
+      <label for="password" class="form-label">Admin Password :</label>
+      <input
+        type="password"
+        class="form-control mb-3"
+        placeholder="Enter Admin password.."
+        name="password"
+        required />
+
+      <button class="btn btn-dark">Admin Sign-up</button>
+    </form>
+  </div>
+</div>

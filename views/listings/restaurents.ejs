@@ -1,0 +1,21 @@
+<% layout("./layouts/boilerplate") %>
+
+<h1>Book Your Restaurent</h1>
+<div class="row mt-3">
+  <% for (hotel of allHotels) { %>
+  <div class="card listing-card res-card" style="width: 18rem">
+    <img src="<%= hotel.image %>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%= hotel.name %></h5>
+      <p class="card-text"><%= hotel.address %></p>
+      <p class="card-text"><%= hotel.time %></p>
+      <p class="card-text">$<%= hotel.price %></p>
+      <a
+        href="/restaurents/<%= hotel._id %>/book_restaurent"
+        class="btn btn-dark"
+        >Book Now</a
+      >
+    </div>
+  </div>
+  <% } %>
+</div>

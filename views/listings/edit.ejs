@@ -1,0 +1,66 @@
+<% layout("./layouts/boilerplate") %>
+
+<div class="newfood">
+  <h1>Edit Food</h1>
+  <form
+    method="POST"
+    action="/home/<%= listing._id %>?_method=PUT"
+    class="needs-validation"
+    novalidate>
+    <div class="form-container mb-3">
+      <div class="mb-3">
+        <label for="dishname" class="form-label">Dish Name :</label>
+        <input
+          type="text"
+          name="listing[title]"
+          class="form-control"
+          value="<%= listing.title %>"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="hotel-name" class="form-label">Hotel Name :</label>
+        <input
+          type="text"
+          name="listing[hotelname]"
+          class="form-control"
+          value="<%= listing.hotelname %>"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Select Image :</label>
+        <input
+          type="text"
+          class="form-control"
+          name="listing[image]"
+          value="<%= listing.image %>"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Select Category :</label>
+        <select
+          class="form-select"
+          name="listing[category]"
+          aria-label="Default select example"
+          required>
+          <option selected><%= listing.category %></option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Fast-Food">Fast-Food</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+      </div>
+      <div class="col-3 mb-3">
+        <label for="price" class="form-label">Price :</label>
+        <input
+          type="number"
+          name="listing[price]"
+          class="form-control"
+          value="<%= listing.price %>"
+          required />
+      </div>
+
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+  </form>
+</div>

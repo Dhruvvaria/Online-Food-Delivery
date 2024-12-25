@@ -1,0 +1,63 @@
+<% layout("./layouts/boilerplate") %>
+
+<div class="newfood">
+  <h1>Add New Food</h1>
+  <form method="post" action="/home" class="needs-validation" novalidate>
+    <div class="form-container mb-3">
+      <div class="mb-3">
+        <label for="dishname" class="form-label">Dish Name :</label>
+        <input
+          type="text"
+          name="listing[title]"
+          class="form-control"
+          placeholder="Enter Dish Name..."
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="hotel-name" class="form-label">Hotel Name :</label>
+        <input
+          type="text"
+          name="listing[hotelname]"
+          class="form-control"
+          placeholder="Enter Hotel Name..."
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Select Image :</label>
+        <input
+          type="text"
+          class="form-control"
+          name="listing[image]"
+          placeholder="Select Image..."
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Select Category :</label>
+
+        <select
+          class="form-select"
+          name="listing[category]"
+          aria-label="Default select example"
+          required>
+          <option selected>Select foood category..</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Fast-Food">Fast-Food</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+      </div>
+      <div class="col-3 mb-3">
+        <label for="price" class="form-label">Price :</label>
+        <input
+          type="number"
+          name="listing[price]"
+          class="form-control"
+          required
+          placeholder="Enter Price..." />
+      </div>
+
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+  </form>
+</div>

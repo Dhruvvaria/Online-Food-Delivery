@@ -1,0 +1,228 @@
+<% layout("./layouts/boilerplate") %>
+
+<h1>Order Your Food</h1>
+
+<nav class="mt-3">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button
+      class="nav-link active"
+      id="nav-all-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-all"
+      type="button"
+      role="tab"
+      aria-controls="nav-all"
+      aria-selected="true">
+      All
+    </button>
+    <button
+      class="nav-link"
+      id="nav-breakfast-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-breakfast"
+      type="button"
+      role="tab"
+      aria-controls="nav-breakfast"
+      aria-selected="false">
+      Breakfast
+    </button>
+    <button
+      class="nav-link"
+      id="nav-fastfood-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-fastfood"
+      type="button"
+      role="tab"
+      aria-controls="nav-fastfood"
+      aria-selected="false">
+      Fast-Food
+    </button>
+    <button
+      class="nav-link"
+      id="nav-lunch-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-lunch"
+      type="button"
+      role="tab"
+      aria-controls="nav-lunch"
+      aria-selected="false">
+      Lunch
+    </button>
+    <button
+      class="nav-link"
+      id="nav-dinner-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-dinner"
+      type="button"
+      role="tab"
+      aria-controls="nav-dinner"
+      aria-selected="false">
+      Dinner
+    </button>
+    <button
+      class="nav-link"
+      id="nav-dessert-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-dessert"
+      type="button"
+      role="tab"
+      aria-controls="nav-dessert"
+      aria-selected="false">
+      Dessert
+    </button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div
+    class="tab-pane fade show active"
+    id="nav-all"
+    role="tabpanel"
+    aria-labelledby="nav-all-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { %>
+      <div class="card listing-card">
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <p class="card-text">$<%= listing.price %></p>
+          <form action="/add-to-cart/<%= listing.id %>" method="POST">
+            <button class="btn btn-dark">
+              <i class="ri-add-circle-line"></i> &nbsp;Add to basket
+            </button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-breakfast"
+    role="tabpanel"
+    aria-labelledby="nav-breakfast-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { if( listing.category == "Breakfast" )
+      {%>
+      <div class="card listing-card">
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <div class="card-text"><%= listing.category %></div>
+          <p class="card-text">$<%= listing.price %></p>
+          <a href="#" class="btn btn-dark"
+            ><i class="ri-add-circle-line"></i> &nbsp;Add to basket
+          </a>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-fastfood"
+    role="tabpanel"
+    aria-labelledby="nav-fastfood-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { if( listing.category == "Fast-Food" )
+      {%>
+      <div class="card listing-card">
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <div class="card-text"><%= listing.category %></div>
+          <p class="card-text">$<%= listing.price %></p>
+          <a href="#" class="btn btn-dark"
+            ><i class="ri-add-circle-line"></i> &nbsp;Add to basket
+          </a>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-lunch"
+    role="tabpanel"
+    aria-labelledby="nav-lunch-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { if( listing.category == "Lunch" ) {%>
+      <div class="card listing-card">
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <div class="card-text"><%= listing.category %></div>
+          <p class="card-text">$<%= listing.price %></p>
+          <a href="#" class="btn btn-dark"
+            ><i class="ri-add-circle-line"></i> &nbsp;Add to basket
+          </a>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-dinner"
+    role="tabpanel"
+    aria-labelledby="nav-dinner-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { if( listing.category == "Dinner" ) {%>
+      <div class="card listing-card">
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <div class="card-text"><%= listing.category %></div>
+          <p class="card-text">$<%= listing.price %></p>
+          <a href="#" class="btn btn-dark"
+            ><i class="ri-add-circle-line"></i> &nbsp;Add to basket
+          </a>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-dessert"
+    role="tabpanel"
+    aria-labelledby="nav-dessert-tab"
+    tabindex="0">
+    <div class="restaurents">
+      <% for (listing of allListings) { if( listing.category == "Dessert" ) {%>
+      <div class="card listing-card">
+        <form
+          action="/home/<%= listing._id %>?_method=DELETE"
+          class="d-flex justify-content-end"
+          method="POST">
+          <button class="btn delete-btn">
+            <i class="ri-close-large-line"></i>
+          </button>
+        </form>
+        <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text"><%= listing.hotelname %></p>
+          <div class="card-text"><%= listing.category %></div>
+          <p class="card-text">$<%= listing.price %></p>
+          <a href="#" class="btn btn-dark"
+            ><i class="ri-add-circle-line"></i> &nbsp;Add to basket
+          </a>
+          <a href="/home/<%= listing._id %>/edit" class="btn btn-dark"
+            ><i class="ri-file-edit-line"></i> &nbsp;Edit
+          </a>
+        </div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+</div>

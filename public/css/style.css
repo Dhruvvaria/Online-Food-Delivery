@@ -1,0 +1,191 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background: #9dbc98 !important;
+  font-family: "Commissioner", sans-serif !important;
+}
+
+.container {
+  flex: 1;
+  min-height: 70vh;
+}
+/* navbar */
+
+.navbar {
+  background: #ebd9b4 !important;
+  max-height: 5rem;
+}
+
+.nav-link {
+  font-weight: 500 !important;
+  color: #222222 !important;
+  font-weight: 600 !important;
+  transition: ease 0.3s !important;
+}
+
+.navbar-nav .nav-link:hover {
+  opacity: 0.5;
+}
+
+.navbar .navbar-brand img {
+  width: 5rem;
+}
+
+.navbar-collapse a {
+  font-weight: 600 !important;
+  padding: 0px 0px !important;
+  margin-right: 1.5rem;
+  position: relative !important;
+}
+
+.search-pannel {
+  padding: 0 2rem !important;
+  border-radius: 2rem !important;
+}
+
+.btn-search {
+  border-radius: 2rem !important;
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+}
+
+/* Home */
+
+h1 {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  background-color: #638889;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.5em;
+  margin-bottom: 12px;
+}
+
+.restaurents {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.listing-card {
+  border: none !important;
+  width: 18rem !important;
+  padding: 1rem;
+  margin: 1.2rem 0.8rem;
+  border-radius: 1rem !important;
+}
+
+.card-img-top {
+  width: 100% !important;
+  height: 13rem;
+  border-radius: 1rem !important;
+}
+
+.card-body {
+  padding: 5px 0 !important;
+}
+
+@media (max-width: 450px) {
+  .restaurents {
+    justify-content: center;
+  }
+}
+
+.res-card {
+  width: 25rem !important;
+  margin: 1.5rem 1.2rem;
+}
+
+.res-card img {
+  height: 18rem;
+}
+
+.form-container {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+.special {
+  color: #638889;
+  font-weight: 600;
+}
+
+/* footer */
+footer {
+  bottom: 0;
+  background-color: #ebd9b4;
+  text-align: center;
+}
+
+footer img {
+  height: 5rem;
+}
+
+footer .links .nav-link {
+  display: inline !important;
+  margin-left: 1rem;
+}
+
+footer .card-text {
+  padding: 0 4rem;
+}
+
+.delete-btn {
+  padding: 0 0 0.4rem 0.2rem !important;
+  font-size: 1.2rem !important;
+}
+
+.background-blur {
+  filter: blur(2px);
+}
+
+.flash-msg {
+  position: fixed !important;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ebd9b4 !important;
+  z-index: 1060 !important;
+  text-align: center !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 2rem !important;
+}
+
+.flash-msg .flash-i {
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: lighter;
+  font-size: 2rem;
+}
+
+.user-info:hover {
+  opacity: 1 !important;
+}
+
+.control-pannel {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.control-pannel button {
+  margin: 0 2rem;
+}
+
+.cart-img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.left {
+  display: flex;
+}
+
+.about-detail {
+  font-size: 1.3rem;
+}

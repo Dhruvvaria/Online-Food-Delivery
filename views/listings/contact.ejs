@@ -1,0 +1,87 @@
+<% layout("layouts/boilerplate") %>
+
+<h1>Contact Us</h1>
+<div class="form-container mb-3">
+  <h3>
+    <span class="special">Send A Message </span>
+  </h3>
+  <h3 class="mb-3">
+    Leave A Message Here &nbsp;<i class="ri-question-answer-fill"></i>
+  </h3>
+  <div class="row">
+    <div class="cols-8">
+      <form action="/contact" method="POST" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                name="contact[name]"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required />
+              <div class="invalid-feedback">Please provide a your name.</div>
+              <label for="floatingInput">Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                name="contact[email]"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required />
+              <div class="invalid-feedback">Please provide a your E-mail.</div>
+              <label for="floatingInput">Email</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                name="contact[phone]"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required />
+              <div class="invalid-feedback">Please provide a your number.</div>
+              <label for="floatingInput">Phone</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                name="contact[city]"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required />
+              <div class="invalid-feedback">Please provide city.</div>
+              <label for="floatingInput">City</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            name="contact[description]"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+            required></textarea>
+          <div class="invalid-feedback">Please provide a your suggestion.</div>
+          <label for="floatingTextarea2">Your need & Description</label>
+        </div>
+        <button type="submit" class="btn btn-dark mt-3">
+          <i class="ri-send-plane-2-fill"></i> &nbsp;Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

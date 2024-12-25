@@ -1,0 +1,38 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="contact">
+  <h1>Contact Details</h1>
+  <% if(!allContacts.length) { %>
+  <h2 class="form-container">No Contacts here!!</h2>
+  <% } %> <% if(allContacts.length) { %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Phone</th>
+        <th scope="col">City</th>
+        <th scope="col">Statement</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (contact of allContacts) { %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.city %></td>
+        <td><%= contact.description %></td>
+        <td>
+          <a href="/admin_home/contact/<%= contact._id %>/delete"
+            ><button class="btn btn-dark">
+              <i class="ri-close-large-line"></i></button
+          ></a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <% } %>
+</div>

@@ -1,0 +1,51 @@
+<% layout("./layouts/boilerplate") %>
+<div class="cart">
+  <h1>Orders</h1>
+  <% if(allCartItems.length == 0) { %>
+  <div class="form-container">
+    <h3>
+      <span class="special"
+        >There is no any oreder pending. Please wait for someone orders.
+      </span>
+    </h3>
+  </div>
+  <% } else { %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Items</th>
+        <th scope="col">Product</th>
+        <th scope="col">Product-Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total-Price</th>
+        <th scope="col" colspan="2" style="text-align: center">Ordered at</th>
+        <th scope="col">Dispatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% allCartItems.forEach((cart, cartIndex) => { %> <%
+      cart.items.forEach((item, itemIndex) => { %>
+      <tr>
+        <td><%= cartIndex + 1 %></td>
+        <td><img src="<%= item.image %>" alt="" class="cart-img" /></td>
+        <td><%= item.title %></td>
+
+        <!-- Adjust the field based on the user schema -->
+        <td><%= item.quantity %></td>
+        <td class="dishPrice"><%= item.quantity * item.price %></td>
+        <td><%= new Date(cart.createdAt).toLocaleTimeString() %></td>
+        <td><%= new Date(cart.createdAt).toLocaleDateString() %></td>
+        <td>
+          <form
+            action="/admin_home/orders/delete-order/<%= cart._id %>?_method=DELETE"
+            method="POST">
+            <button type="submit" class="btn btn-dark">
+              <i class="ri-truck-line"></i>
+            </button>
+          </form>
+        </td>
+      </tr>
+      <% }) %> <% }) %> <%}%>
+    </tbody>
+  </table>
+</div>

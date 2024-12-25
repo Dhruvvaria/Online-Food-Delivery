@@ -1,0 +1,29 @@
+<% layout("./layouts/boilerplate") %>
+
+<h1>Change in Menu ( Add or Update in Menu )</h1>
+<div class="user-handle d-flex align-items-center"></div>
+<div class="restaurents">
+  <% for (listing of allListings) { %>
+  <div class="card listing-card">
+    <form
+      action="/home/<%= listing._id %>?_method=DELETE"
+      class="d-flex justify-content-end"
+      method="POST">
+      <button class="btn delete-btn">
+        <i class="ri-close-large-line"></i>
+      </button>
+    </form>
+    <img src="<%= listing.image %>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%= listing.title %></h5>
+      <p class="card-text">Hotel : <%= listing.hotelname %></p>
+      <p class="card-text">Category : <%= listing.category %></p>
+      <p class="card-text">Price : $<%= listing.price %></p>
+
+      <a href="/home/<%= listing._id %>/edit" class="btn btn-dark"
+        ><i class="ri-file-edit-line"></i> &nbsp;Edit
+      </a>
+    </div>
+  </div>
+  <% } %>
+</div>
